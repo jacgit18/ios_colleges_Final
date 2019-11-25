@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ios_colleges_with_images/states.dart';
+import 'dart:math';
 
 class Wichita extends StatelessWidget {
   @override
@@ -607,4 +608,21 @@ class LandMarks{
   final String description;
   final String image;
   LandMarks({this.title,this.description,this.image});
+}
+
+
+class Distance {
+  double originx, originy, destinationx, destinationy;
+  double result, x, y, deglen = 110.25;
+
+  Distance({this.originx = 5.0, this.originy = 11.0, this.destinationx = 5.0,
+    this.destinationy = 7.0});
+
+  double calc({originx, originy, destinationx, destinationy }){
+    x = originx - destinationx;
+    y = (originy - destinationy) * cos(destinationx);
+    result = deglen * sqrt(x*x + y*y);
+    print('distance is: ' + result.toString());
+    return result;
+  }
 }
