@@ -463,6 +463,8 @@ class Carolina extends StatelessWidget {
 }
 
 class  Tulsa extends StatelessWidget {
+  final fish2 = Distance();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -486,6 +488,18 @@ class  Tulsa extends StatelessWidget {
 
               child: Text("Oklahoma"),
             ),
+            Text("distance: " + fish2.calc(
+
+                originx: 40.64,
+                originy: -74.01,
+                destinationx: 35.48,
+                destinationy: -97.61
+            ).toString() + "Km. " + "or " + (fish2.calc(
+                originx: 40.64,
+                originy: -74.01,
+                destinationx: 35.48,
+                destinationy: -97.61
+            ) * 0.62).toString() + " in miles. ")
           ],
         ),
       ),
