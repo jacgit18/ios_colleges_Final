@@ -3,6 +3,8 @@ import 'package:ios_colleges_with_images/states.dart';
 import 'dart:math';
 
 class Wichita extends StatelessWidget {
+  final fish2 = Distance();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -28,6 +30,18 @@ class Wichita extends StatelessWidget {
 
               child: Text("Kansas"),
             ),
+            Text("distance: " + fish2.calc(
+
+                originx: 40.64,
+                originy: -74.01,
+                destinationx: 37.66,
+                destinationy: -97.72
+            ).toString() + "Km. " + "or " + (fish2.calc(
+                originx: 40.64,
+                originy: -74.01,
+                destinationx: 37.66,
+                destinationy: -97.72
+            ) * 0.62).toString() + " in miles. ")
 
           ],
         ),
@@ -482,6 +496,8 @@ class  Tulsa extends StatelessWidget {
 }
 
 class Vancouver extends StatelessWidget {
+  final fish2 = Distance();
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -504,7 +520,20 @@ class Vancouver extends StatelessWidget {
             ),
 
               child: Text("Canada"),
+
             ),
+            Text("distance: " + fish2.calc(
+
+                originx: 40.64,
+                originy: -74.01,
+                destinationx: 42.66,
+                destinationy: -73.88
+            ).toString() + "Km. " + "or " + (fish2.calc(
+                originx: 40.64,
+                originy: -74.01,
+                destinationx: 42.66,
+                destinationy: -73.88
+            ) * 0.62).toString() + " in miles. ")
           ],
         ),
       ),
@@ -535,7 +564,14 @@ class Albany extends StatelessWidget {
       image: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/NewYorkStateCulturalEducationCenter.JPG');
   final List<LandMarks> albanylandmarks = [];
   final TrackIt fish = TrackIt();
+  final fish2 = Distance(
 
+      originx: 2,
+      originy: 11,
+      destinationx: 5,
+      destinationy: 7
+
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -544,6 +580,15 @@ class Albany extends StatelessWidget {
       albanylandmarks.add(capitol);
       albanylandmarks.add(museum);
     }
+
+    fish2.calc(
+
+        originx: 40.64,
+        originy: -74.01,
+        destinationx: 42.66,
+        destinationy: -73.88
+    );
+
 
     return MaterialApp(
       home: Scaffold(
@@ -576,7 +621,19 @@ class Albany extends StatelessWidget {
                     context, MaterialPageRoute(
                     builder: (BuildContext context) => NewYork())
                 ),
-                child: Text('New York'))
+                child: Text('New York')),
+            Text("distance: " + fish2.calc(
+
+                originx: 40.64,
+                originy: -74.01,
+                destinationx: 42.66,
+                destinationy: -73.88
+            ).toString() + "Km. " + "or " + (fish2.calc(
+                    originx: 40.64,
+                    originy: -74.01,
+                    destinationx: 42.66,
+                    destinationy: -73.88
+                ) * 0.62).toString() + " in miles. ")
           ],
         ),
       ),
@@ -621,7 +678,7 @@ class Distance {
   double calc({originx, originy, destinationx, destinationy }){
     x = originx - destinationx;
     y = (originy - destinationy) * cos(destinationx);
-    result = deglen * sqrt(x*x + y*y);
+    result = (deglen * sqrt(x*x + y*y)).floorToDouble();
     print('distance is: ' + result.toString());
     return result;
   }
