@@ -1,439 +1,293 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:ios_colleges_with_cities/cities.dart';
+import 'colleges.dart';
 
-class Wsu extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home:Scaffold(
-        appBar: AppBar(
-          title: Text('Witcha State University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 12000 a year for its computer science , '
-                'it is located in Witcha, Kansas'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Wichita())
-                ),
-                child: Text(" City of Wichita"))
-          ],
-        ),
-      ),
-    );
+void main() => runApp(MyApp());
 
-  }
-}
-
-class Ou extends StatelessWidget{
+class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('The University of Oklahoma'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Norman())
-                ),
-                child: Text(" City of norman"))
-          ],
-        ),
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        // This is the theme of your application.
+        //
+        // Try running your application with "flutter run". You'll see the
+        // application has a blue toolbar. Then, without quitting the app, try
+        // changing the primarySwatch below to Colors.green and then invoke
+        // "hot reload" (press "r" in the console where you ran "flutter run",
+        // or simply save your changes to "hot reload" in a Flutter IDE).
+        // Notice that the counter didn't reset back to zero; the application
+        // is not restarted.
+        primarySwatch: Colors.red,
       ),
+      home: MyHomePage(title: 'Joshua Carpentier '),
     );
   }
 }
 
-class Osu extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Ohio State University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Stillwater())
-                ),
-                child: Text(" City of stillwater"))
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
 
-          ],
-        ),
-      ),
-    );
-  }
+  // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
+  final String title;
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
-class Ku extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('University of Kansas'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Lawrence())
-                ),
-                child: Text(" City of Kansas"))
-          ],
-        ),
-      ),
-    );
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      // This call to setState tells the Flutter framework that something has
+      // changed in this State, which causes it to rerun the build method below
+      // so that the display can reflect the updated values. If we changed
+      // _counter without calling setState(), then the build method would not be
+      // called again, and so nothing would appear to happen.
+      _counter++;
+    });
   }
-}
 
-
-class Mit extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Massachusetts Institute of Technology'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Cambridge())
-                ),
-                child: Text(" City of Cambridge"))
-          ],
-        ),
+    // This method is rerun every time setState is called, for instance as done
+    // by the _incrementCounter method above.
+    //
+    // The Flutter framework has been optimized to make rerunning build methods
+    // fast, so that you can just rebuild anything that needs updating rather
+    // than having to individually change instances of widgets.
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
       ),
-    );
-  }
-}
-
-
-class Cuny extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('City University of New York'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Brooklyn())
-                ),
-                child: Text(" Bouroughs of New York"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Nyu extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('New York University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Manhattan())
-                ),
-                child: Text(" Bourough of Manhattan"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Opsu extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Oklahoma Panhandle State University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Goodwell())
-                ),
-                child: Text(" Goodwell"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Rice extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Rice University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Houston())
-                ),
-                child: Text(" City of Houston"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Brown extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Brown University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Providence())
-                ),
-                child: Text(" City of Providence"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Isu extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Illinois State University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Normal())
-                ),
-                child: Text(" City of Normal, Illinois"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Duke extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Duke University'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Carolina())
-                ),
-                child: Text(" City of North Carolina"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Utulsa extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('The University of Tulsa'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Tulsa())
-                ),
-                child: Text(" City of Tulsa, Oklahoma"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Bc extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('The University of British Columbia'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) =>  Vancouver())
-                ),
-                child: Text(" City of British Columbia"))
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Suny extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('State University of New York'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            FlatButton(color:Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
-            Text(' Tuition cost around 15000 a year for its computer science , '
-                'it is located in norman, Oklohoma'),
-            FlatButton(color: Colors.deepPurple ,onPressed: () =>
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) => Albany())
-                ),
-                child: Text(" Albany "))
-          ],
-        ),
+      body: Center(
+        child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                      decoration: BoxDecoration(color: Colors.purple),
+                      width: 70,
+                      height: 30,
+                      child: FlatButton(
+                        child: Text('WSU'),
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => Wsu())),
+                      )),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 60,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Ou())),
+                      child: Text('OU'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 60,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Osu())),
+                      child: Text('OSU'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 60,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Ku())),
+                      child: Text('KU'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 60,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Mit())),
+                      child: Text('MIT'),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Cuny())),
+                      child: Text('CUNY'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 60,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Nyu())),
+                      child: Text('NYU'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Opsu())),
+                      child: Text('OPSU'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Rice())),
+                      child: Text('RICE'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Brown())),
+                      child: Text('BROWN', style: TextStyle(fontSize: 10)),
+                    ),
+                  ),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 60,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Isu())),
+                      child: Text('ISU'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Duke())),
+                      child: Text('DUKE'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Utulsa())),
+                      child: Text('UTULSA', style: TextStyle(fontSize: 10)),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Bc())),
+                      child: Text('BC'),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
+                    decoration: BoxDecoration(color: Colors.purple),
+                    width: 70,
+                    height: 30,
+                    child: FlatButton(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => Suny())),
+                      child: Text('SUNY', style: TextStyle(fontSize: 12)),
+                    ),
+                  ),
+                ],
+              )
+            ]),
       ),
     );
   }
