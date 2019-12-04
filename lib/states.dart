@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ios_colleges_with_images/Countries.dart';
-import 'package:ios_colleges_with_images/Countries.dart' as prefix0;
+import 'package:ios_colleges_with_images/Countries.dart';
 
 class Kansas extends StatelessWidget {
   @override
