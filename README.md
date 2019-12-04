@@ -1,4 +1,4 @@
-# ios_colleges_with_images
+# 01.ios_colleges_with_buttons
 
 A new Flutter application.
 
