@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ios_colleges_with_images/states.dart';
-import 'dart:math';
 
 class Wichita extends StatelessWidget {
-  final fish2 = Distance();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,18 +27,6 @@ class Wichita extends StatelessWidget {
 
               child: Text("Kansas"),
             ),
-            Text("distance: " + fish2.calc(
-
-                originx: 40.64,
-                originy: -74.01,
-                destinationx: 37.66,
-                destinationy: -97.72
-            ).toString() + "Km. " + "or " + (fish2.calc(
-                originx: 40.64,
-                originy: -74.01,
-                destinationx: 37.66,
-                destinationy: -97.72
-            ) * 0.62).toString() + " in miles. ")
 
           ],
         ),
@@ -463,8 +448,6 @@ class Carolina extends StatelessWidget {
 }
 
 class  Tulsa extends StatelessWidget {
-  final fish2 = Distance();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -488,18 +471,6 @@ class  Tulsa extends StatelessWidget {
 
               child: Text("Oklahoma"),
             ),
-            Text("distance: " + fish2.calc(
-
-                originx: 40.64,
-                originy: -74.01,
-                destinationx: 35.48,
-                destinationy: -97.61
-            ).toString() + "Km. " + "or " + (fish2.calc(
-                originx: 40.64,
-                originy: -74.01,
-                destinationx: 35.48,
-                destinationy: -97.61
-            ) * 0.62).toString() + " in miles. ")
           ],
         ),
       ),
@@ -510,8 +481,6 @@ class  Tulsa extends StatelessWidget {
 }
 
 class Vancouver extends StatelessWidget {
-  final fish2 = Distance();
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -534,20 +503,7 @@ class Vancouver extends StatelessWidget {
             ),
 
               child: Text("Canada"),
-
             ),
-            Text("distance: " + fish2.calc(
-
-                originx: 40.64,
-                originy: -74.01,
-                destinationx: 42.66,
-                destinationy: -73.88
-            ).toString() + "Km. " + "or " + (fish2.calc(
-                originx: 40.64,
-                originy: -74.01,
-                destinationx: 42.66,
-                destinationy: -73.88
-            ) * 0.62).toString() + " in miles. ")
           ],
         ),
       ),
@@ -558,142 +514,34 @@ class Vancouver extends StatelessWidget {
 }
 
 class Albany extends StatelessWidget {
-  final capitol = LandMarks(title: 'State Capitol',
-      description: 'The New York State Capitol, the seat of the New York State government, '
-          'is located in Albany, the capital city of the U.S. state of New York. '
-          'The capitol building is part of the Empire State Plaza complex on State Street in Capitol Park.'
-          ' Housing the New York State Legislature, '
-          'the building was completed in 1899 at a cost of US\$25 million '
-          '(equivalent to \$753 million in 2018), '
-          'making it the most expensive government building of its time.[3] '
-          'It was listed on the National Register of Historic Places in 1971',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/4/42/NYSCapitolPanorama.jpg');
-  final museum = LandMarks(title: 'The New York State Museum',
-      description: 'The New York State Museum is a research-backed institution in Albany, New York, United States. '
-          'It is located on Madison Avenue, attached to the south side of the Empire State Plaza, '
-          'facing onto the plaza and towards the New York State Capitol. The museum houses art, '
-          'artifacts (prehistoric and historic), and ecofacts that reflect New York’s cultural, natural, '
-          'and geological development. Operated by the New York State Education Department\'s'
-          'Office of Cultural Education, it is the nation\'s oldest and largest state museum.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c1/NewYorkStateCulturalEducationCenter.JPG');
-  final List<LandMarks> albanylandmarks = [];
-  final TrackIt fish = TrackIt();
-  final fish2 = Distance(
-
-      originx: 2,
-      originy: 11,
-      destinationx: 5,
-      destinationy: 7
-
-  );
-
   @override
   Widget build(BuildContext context) {
-
-    if (fish.fish()) {
-      albanylandmarks.add(capitol);
-      albanylandmarks.add(museum);
-    }
-
-    fish2.calc(
-
-        originx: 40.64,
-        originy: -74.01,
-        destinationx: 42.66,
-        destinationy: -73.88
-    );
-
-
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('City of Albany'),),
-        body: Column(
+          title: Text("Albany, New York "),
+
+
+        ),
+        body:Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            FlatButton(color: Colors.lightBlue,
-                onPressed: () => Navigator.pop(context),
-                child: Text('Go Back')),
+            FlatButton(color: Colors.deepPurple, onPressed: ()=> Navigator.pop(context) ,
+                child: Text("Go back")),
             Image.asset('assets/albany1.jpg'),
-            Text('Albany is a city in Ny.'
-                '......'),
-            Expanded(child: ListView.builder(
-              itemCount: albanylandmarks.length,
-              itemBuilder: (BuildContext ctxt, final int index) {
-                return ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        albanylandmarks[index].image),
-                  ),
-                  title: Text(albanylandmarks[index].title,),
-                  subtitle: Text(albanylandmarks[index].description),
-                );
-              },
-            ),),
-            FlatButton(color: Colors.deepPurple, onPressed: () =>
-                Navigator.push(
-                    context, MaterialPageRoute(
-                    builder: (BuildContext context) => NewYork())
-                ),
-                child: Text('New York')),
-            Text("distance: " + fish2.calc(
+            SizedBox(height: 5.0),
+            Text(" Albany is "),
+            FlatButton(color: Colors.green, onPressed: ()=> Navigator.push(
+                context, MaterialPageRoute(builder: (BuildContext context) => NewYork())
+            ),
 
-                originx: 40.64,
-                originy: -74.01,
-                destinationx: 42.66,
-                destinationy: -73.88
-            ).toString() + "Km. " + "or " + (fish2.calc(
-                    originx: 40.64,
-                    originy: -74.01,
-                    destinationx: 42.66,
-                    destinationy: -73.88
-                ) * 0.62).toString() + " in miles. ")
+              child: Text("New York"),
+            ),
           ],
         ),
       ),
+
+
     );
-  }
-}
-
-
-
-class TrackIt{
-  int bird =0;
-  TrackIt();
-  bool fish(){
-    if (bird==0){
-      print("bird: "+ bird.toString());
-      bird= bird+1;
-      return true;
-    }
-    else{
-      print("bird: "+ bird.toString());
-      return false;
-    }
-  }
-}
-
-
-class LandMarks{
-  final String title;
-  final String description;
-  final String image;
-  LandMarks({this.title,this.description,this.image});
-}
-
-
-class Distance {
-  double originx, originy, destinationx, destinationy;
-  double result, x, y, deglen = 110.25;
-
-  Distance({this.originx = 5.0, this.originy = 11.0, this.destinationx = 5.0,
-    this.destinationy = 7.0});
-
-  double calc({originx, originy, destinationx, destinationy }){
-    x = originx - destinationx;
-    y = (originy - destinationy) * cos(destinationx);
-    result = (deglen * sqrt(x*x + y*y)).floorToDouble();
-    print('distance is: ' + result.toString());
-    return result;
   }
 }
