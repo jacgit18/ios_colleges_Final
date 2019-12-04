@@ -16,8 +16,6 @@ class Canada extends StatelessWidget {
               onPressed: ()=> Navigator.pop(context) ,
 
             ),
-            Image.asset('assets/canmap.jpg'),
-            SizedBox(height: 5.0),
             Text('vbdbvdbvkjdbvkjdbvkdjbvdj'),
 
 
@@ -45,8 +43,6 @@ class UnitedStates extends StatelessWidget {
               onPressed: ()=> Navigator.pop(context) ,
 
             ),
-            Image.asset('assets/usamap.jpg'),
-            SizedBox(height: 5.0),
             Text('vbdbvdbvkjdbvkjdbvkdjbvdj'),
 
 
