@@ -1,4 +1,4 @@
-# 04.ios_colleges_with_images
+# 04.ios_colleges_cities_and_states
 
 A new Flutter application.
 
