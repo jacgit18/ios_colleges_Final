@@ -1,4 +1,4 @@
-# 06.ios_colleges_with_images
+# 06.ios_colleges_with_images_Refactor
 
 A new Flutter application.
 
