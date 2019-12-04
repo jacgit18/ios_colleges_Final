@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ios_colleges_with_images/Countries.dart';
-import 'package:ios_colleges_with_images/Countries.dart' as prefix0;
+import 'package:ios_colleges_cities_and_states/Countries.dart';
+import 'package:ios_colleges_cities_and_states/Countries.dart' as prefix0;
 
 class Kansas extends StatelessWidget {
   @override
@@ -14,14 +14,12 @@ class Kansas extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             FlatButton(
-              color: Colors.lightBlue,
-              child: Text('Go Back'),
-              onPressed: ()=> Navigator.pop(context) ,
+                color: Colors.lightBlue,
+                child: Text('Go Back'),
+                onPressed: ()=> Navigator.pop(context) ,
 
             ),
-            Image.asset('assets/kansasmap.jpg'),
-            SizedBox(height: 5.0),
-            Text('bdvbdbvkjdbvkdjbvk'),
+          Text('bdvbdbvkjdbvkdjbvk'),
             FlatButton(color: Colors.green, onPressed: ()=> Navigator.push(
                 context, MaterialPageRoute(builder: (BuildContext context) => UnitedStates())
             ),
@@ -64,7 +62,7 @@ class Oklahoma extends StatelessWidget {
         ),
       ),
     );
-  }
+}
 }
 
 class Massachusetts extends StatelessWidget {
@@ -84,7 +82,6 @@ class Massachusetts extends StatelessWidget {
               onPressed: ()=> Navigator.pop(context) ,
 
             ),
-
             Text('vbdbvdbvkjdbvkjdbvkdjbvdj'),
             FlatButton(color: Colors.green, onPressed: ()=> Navigator.push(
                 context, MaterialPageRoute(builder: (BuildContext context) => UnitedStates())
