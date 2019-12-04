@@ -1,4 +1,4 @@
-# 02.ios_colleges_with_images
+# 02.ios_college_Rows and Columns
 
 A new Flutter application.
 
