@@ -188,7 +188,6 @@ class Bc extends College{
   );
 }
 
-//Reginald Metellus
 
 class Suny extends College{
   Suny():super(
