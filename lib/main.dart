@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.red,
       ),
-      home: MyHomePage(title: 'Joshua Carpentier '),
+      home: MyHomePage(title: 'Joshua Carpentier'),
     );
   }
 }
